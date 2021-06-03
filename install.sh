@@ -21,5 +21,6 @@ cd ~
 R CMD INSTALL locfit
 #Use a pre-written Rscript to continue
 echo "Start of Rscript"
+cd ${cur_path}
 Rscript install_infercnv.R
 echo "End of Rscript"

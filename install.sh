@@ -5,7 +5,7 @@ module load R/4.1.0-intel
 #Loading jags automatically load gcc/4.7.4 replace it with a later version
 module unload gcc/4.7.4
 export LD_LIBRARY_PATH=/share/apps/anaconda/3/5.1.0/lib:$LD_LIBRARY_PATH
-mkdir -p R/Library
+mkdir -p ../R/Library
 cur_path=$(pwd)
 a="/lf_adap.c"
 adap_path=${cur_path}${a}

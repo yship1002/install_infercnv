@@ -13,3 +13,7 @@ cd install_infercnv
 source install.sh
 
 # 5. Grab a cup of coffee and wait for 30 minutes 
+
+# PS:
+lf_adap.c file (located in the source code of locfit/src )has error where || should be used instead of |
+I replaced every occurence of | with || and it compiles

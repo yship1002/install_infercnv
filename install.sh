@@ -27,7 +27,8 @@ export LD_LIBRARY_PATH=/share/apps/anaconda/3/5.1.0/lib:$LD_LIBRARY_PATH
 
 #Specify the R library where all R packages will be installed otherwise it$
 #See https://wiki.hpc.tulane.edu/trac/wiki/cypress/InstallingRPackages for$
-cd ${home_path}/R/Library
+b="/R/Library"
+cd ${home_path}${b}
 export R_LIBS=$(pwd)
 
 
@@ -38,7 +39,8 @@ tar -xf locfit_1.5-9.4.tar.gz
 
 #Logical operators in original lf_adap.c file are wrong
 #I have fixed all occrence in the file and replace it with the correct one here
-cd $(home_path)/locfit/src
+c="/locfit/src"
+cd ${home_path}${c}
 rm lf_adap.c
 cp ${adap_path} .
 cd ${home_path}

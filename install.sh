@@ -8,9 +8,6 @@ module load R/4.1.0-intel
 #Loading jags automatically load gcc/4.7.4 replace it with a later version
 module unload gcc/4.7.4
 
-#Create R library for all packages 
-mkdir -p ../R/Library
-
 
 #Get current path
 start_path=$(pwd)
@@ -27,9 +24,7 @@ export LD_LIBRARY_PATH=/share/apps/anaconda/3/5.1.0/lib:$LD_LIBRARY_PATH
 
 #Specify the R library where all R packages will be installed otherwise it$
 #See https://wiki.hpc.tulane.edu/trac/wiki/cypress/InstallingRPackages for$
-b="/R/Library"
-cd ${home_path}${b}
-export R_LIBS=$(pwd)
+export R_LIBS=/lustre/project/wdeng7/R_LIB_Share/Library
 
 
 #Changing directory to your personal directory on luster to begin installation of locfit one of the dependencies of infercnv

@@ -12,6 +12,10 @@ module unload gcc/4.7.4
 #Set LD_path so that libpng16.so can be loaded
 export LD_LIBRARY_PATH=/share/apps/anaconda/3/5.1.0/lib:$LD_LIBRARY_PATH
 
+#Specify the R library where all R packages will be installed otherwise it$
+#See https://wiki.hpc.tulane.edu/trac/wiki/cypress/InstallingRPackages for$
+export R_LIBS=/lustre/project/wdeng7/R/Library
+
 #Get current path
 cur_path=$(pwd)
 a="/lf_adap.c"
@@ -30,10 +34,6 @@ cd locfit/src
 rm lf_adap.c
 cp ${adap_path} .
 cd ~
-
-#Specify the R library where all R packages will be installed otherwise it will complain can't install on /share/apps/R
-#See https://wiki.hpc.tulane.edu/trac/wiki/cypress/InstallingRPackages for reference
-export R_LIBS_USER=/lustre/project/wdeng7/R/Library
 
 #Using command line to install R package locfit
 R CMD INSTALL locfit
